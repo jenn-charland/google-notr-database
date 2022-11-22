@@ -22,7 +22,7 @@ module "gke-hub" {
             git = {
               gcp_service_account_email = null
               https_proxy               = null
-              policy_dir                = "configsync"
+              policy_dir                = "config-management"
               secret_type               = "none"
               source_format             = "unstructured"
               sync_branch               = "main"
@@ -35,7 +35,13 @@ module "gke-hub" {
           source_format = "unstructured"
         }
       hierarchy_controller = null
-      policy_controller    = null
+      policy_controller    =  {
+        audit_interval_seconds     = 120
+        exemptable_namespaces      = []
+        log_denies_enabled         = true
+        referential_rules_enabled  = true
+        template_library_installed = true
+      }
       version              = "1.12.2"
     }
   }

@@ -1,4 +1,4 @@
-configsync_repo = "https://github.com/jennviau/google-notr-cassandra"
+configsync_repo = "https://github.com/jennviau/google-notr-database"
 
 #admin_users = "jenn@lab-rat.ca, jacob@homepage.ca"
 
