@@ -1,0 +1,13 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sBannedImageTags
+metadata:
+  name: ban-latest-tags
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+    excludedNamespaces: ["default","kube-system","cert-manager","scylla-manager","scylla-operator"]
+  parameters:
+    tags:
+      - "latest"
