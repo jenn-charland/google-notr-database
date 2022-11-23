@@ -5,8 +5,8 @@ resources:
 - api/api-service.yaml
 - api/api-serviceaccount.yaml
 - db/db-configmap.yaml
-- db/seed-service.yaml
 - ui/ui-service.yaml
 - ui/ui-serviceaccount.yaml
 - ui/memes-ui-deployment.yaml
 - namespace.yaml
+- db/k8ssandra-cluster
