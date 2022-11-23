@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../../base
+patches:
+# Deployment - customize DB Datacenter Env Var 
+- target:
+    kind: Deployment
+    name: memes-api
+  patch: |-
+    - op: replace
+      path: "/spec/template/spec/containers/0/env/-"
+      value:
+        name: DB_DATACENTER
+        value: "GCP"

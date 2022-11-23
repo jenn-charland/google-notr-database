@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+      app: memes
+      app.kubernetes.io/name: memes
+      app.kubernetes.io/instance: memes
+      app.kubernetes.io/component: "api"
+  name: memes-api
+  namespace: memes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: memes
+      app.kubernetes.io/name: memes
+      app.kubernetes.io/instance: memes
+      app.kubernetes.io/component: "api"
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: memes
+        app.kubernetes.io/name: memes
+        app.kubernetes.io/instance: memes
+        app.kubernetes.io/component: "api"
+    spec:
+      serviceAccountName: memes-api-serviceaccount
+      containers:
+        - image: gcr.io/prj-sadasola-actoviau-x-2021/sadasystems/memesgen-api:ea25395
+          name: api
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DB_SERVICE
+              value: ""
+            - name: DB_DATACENTER
+              value: ""
+          resources: {}
+      restartPolicy: Always
+---

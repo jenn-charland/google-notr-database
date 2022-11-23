@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: memes
+    app.kubernetes.io/name: memes
+    app.kubernetes.io/instance: memes
+    app.kubernetes.io/component: "ui"
+  name: memes-ui
+  namespace: memes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: memes
+      app.kubernetes.io/name: memes
+      app.kubernetes.io/instance: memes
+      app.kubernetes.io/component: "ui"
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: memes
+        app.kubernetes.io/name: memes
+        app.kubernetes.io/instance: memes
+        app.kubernetes.io/component: "ui"
+    spec:
+      serviceAccountName: memes-ui-serviceaccount
+      containers:
+        - env:
+            - name: API_ENDPOINT
+              value: http://memes-api:8000
+            - name: DB_DATACENTER
+              value: ""
+          image:
+          name: ui
+          ports:
+            - containerPort: 3000
+          resources: {}
+      restartPolicy: Always
+
+
+
+
