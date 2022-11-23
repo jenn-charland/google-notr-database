@@ -8,6 +8,8 @@ metadata:
       app.kubernetes.io/name: memes
       app.kubernetes.io/instance: memes
       app.kubernetes.io/component: "db"
+  annotations:
+    configsync.gke.io/cluster-name-selector: demo-cassandra-gcp-cluster
 spec:
   cassandra:
     serverVersion: "4.0.1"
