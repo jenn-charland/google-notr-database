@@ -42,7 +42,7 @@ module "gke-hub" {
         referential_rules_enabled  = true
         template_library_installed = true
       }
-      version              = "1.12.2"
+      version              = "1.13.1"
     }
   }
     configmanagement_clusters = {
