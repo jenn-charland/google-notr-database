@@ -4,3 +4,4 @@ resources:
 - namespace.yaml
 - argocd.yaml
 - cert-manager.yaml
+- cassandra-operator.yaml
