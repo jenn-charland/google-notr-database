@@ -4,5 +4,6 @@ kind: Namespace
 metadata:
   name: memes
   labels:
-    owner: platform-engineering.demo
+    owner: platform-engineering
     environment: dev
+    

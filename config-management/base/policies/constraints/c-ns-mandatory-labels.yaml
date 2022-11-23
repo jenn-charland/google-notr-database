@@ -12,7 +12,7 @@ spec:
     message: "All namespaces must have an `owner` label set"
     labels:
       - key: owner
-        allowedRegex: "^[a-zA-Z]+.demo$"
+        allowedRegex: "^[a-zA-Z]"
 ---
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sRequiredLabels
@@ -25,7 +25,7 @@ spec:
         kinds: ["Namespace"]
     excludedNamespaces: ["default","kube-system","cert-manager","argocd","k8ssandra-operator"]
   parameters:
-    message: "All namespaces must have an `env` label set with a value from:  prod, dev, or stg"
+    message: "All namespaces must have an `environment` label set with a value from:  prod, dev, or stg"
     labels:
       - key: environment
         allowedRegex: "^(dev|stg|prod)$"
