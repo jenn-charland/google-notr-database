@@ -27,7 +27,7 @@ spec:
     spec:
       serviceAccountName: memes-api-serviceaccount
       containers:
-        - image: gcr.io/prj-sadasola-actoviau-x-2021/sadasystems/memesgen-api:ea25395
+        - image: gcr.io/notr-2022-anthos-364917/api-service:e773d6c85cbbb3c209f21e435e7b3b464dec005b
           name: api
           ports:
             - containerPort: 8000

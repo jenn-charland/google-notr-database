@@ -33,7 +33,7 @@ spec:
               value: http://memes-api:8000
             - name: DB_DATACENTER
               value: ""
-          image:
+          image: gcr.io/notr-2022-anthos-364917/ui-service:e773d6c85cbbb3c209f21e435e7b3b464dec005b
           name: ui
           ports:
             - containerPort: 3000

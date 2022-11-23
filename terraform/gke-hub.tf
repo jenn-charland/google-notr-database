@@ -22,7 +22,7 @@ module "gke-hub" {
             git = {
               gcp_service_account_email = null
               https_proxy               = null
-              policy_dir                = "config-management"
+              policy_dir                = "config-management/overlays/gcp"
               secret_type               = "none"
               source_format             = "unstructured"
               sync_branch               = "main"
