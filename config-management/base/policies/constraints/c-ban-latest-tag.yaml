@@ -7,7 +7,7 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-    excludedNamespaces: ["default","kube-system","cert-manager","scylla-manager","scylla-operator"]
+    excludedNamespaces: ["default","kube-system","cert-manager","k8ssandra-operator"]
   parameters:
     tags:
       - "latest"
