@@ -1,0 +1,153 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: memegen-db-seed
+  namespace: memesgen
+  labels:
+      app: memesgen
+      app.kubernetes.io/name: memesgen
+      app.kubernetes.io/instance: memesgen
+      app.kubernetes.io/component: "db"
+data:
+  memegen.cql: |
+    CREATE KEYSPACE memegen2 
+    WITH REPLICATION = {
+       'class' : 'NetworkTopologyStrategy',
+       'gcp' : 1 , 
+       'aws': 1,
+       'azure': 1
+    };
+    USE memegen2;
+    DROP TABLE IF EXISTS templates;
+    CREATE TABLE IF NOT EXISTS templates (
+      id text,
+      name text,
+      url text,
+      width int,
+      height int,
+      box_count smallint,
+        PRIMARY KEY (id)
+    );
+
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('87743020','Two Buttons','/templates/1g8my4.jpg',600,908,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('131087935','Running Away Balloon','/templates/261o3j.jpg',761,1024,5);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('247375501','Buff Doge vs. Cheems','/templates/43a45p.png',937,720,4);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('222403160','Bernie I Am Once Again Asking For Your Support','/templates/3oevdk.jpg',750,750,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('438680','Batman Slapping Robin','/templates/9ehk.jpg',400,387,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('188390779','Woman Yelling At Cat','/templates/345v97.jpg',680,438,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('1035805','Boardroom Meeting Suggestion','/templates/m78d.jpg',500,649,4);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('119139145','Blank Nut Button','/templates/1yxkcp.jpg',600,446,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('135256802','Epic Handshake','/templates/28j0te.jpg',900,645,3);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('178591752','Tuxedo Winnie The Pooh','/templates/2ybua0.png',800,582,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('97984','Disaster Girl','/templates/23ls.jpg',500,375,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('114585149','Inhaling Seagull','/templates/1w7ygt.jpg',1269,2825,4);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('259237855','Laughing Leo','/templates/4acd7j.png',470,470,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('110163934','I Bet Hes Thinking About Other Women','/templates/1tl71a.jpg',1654,930,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('91538330','X, X Everywhere','/templates/1ihzfe.jpg',2118,1440,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('27813981','Hide the Pain Harold','/templates/gk5el.jpg',480,601,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61579','One Does Not Simply','/templates/1bij.jpg',568,335,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('89370399','Roll Safe Think About It','/templates/1h7in3.jpg',702,395,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('135678846','Who Killed Hannibal','/templates/28s2gu.jpg',1280,1440,3);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('175540452','Unsettled Tom','/templates/2wifvo.jpg',680,550,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('91545132','Trump Bill Signing','/templates/1ii4oc.jpg',1866,1529,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('132769734','Hard To Swallow Pills','/templates/271ps6.jpg',680,979,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('161865971','Marked Safe From','/templates/2odckz.jpg',618,499,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('196652226','Spongebob Ight Imma Head Out','/templates/392xtu.jpg',822,960,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('6235864','Finding Neverland','/templates/3pnmg.jpg',423,600,3);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('3218037','This Is Where Id Put My Trophy If I Had One','/templates/1wz1x.jpg',300,418,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61556','Grandma Finds The Internet','/templates/1bhw.jpg',640,480,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('101287','Third World Success Kid','/templates/265j.jpg',500,500,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('101511','Dont You Squidward','/templates/26br.jpg',500,333,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('216951317','Guy Holding Cardboard Sign','/templates/3l60ph.jpg',700,702,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('99683372','Sleeping Shaq','/templates/1nck6k.jpg',640,631,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('563423','That Would Be Great','/templates/c2qn.jpg',526,440,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('29617627','Look At Me','/templates/hmt3v.jpg',300,300,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61546','Brace Yourselves X is Coming','/templates/1bhm.jpg',622,477,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('163573','Imagination Spongebob','/templates/3i7p.jpg',500,366,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('157978092','Presidential Alert','/templates/2m20oc.jpg',920,534,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('405658','Grumpy Cat','/templates/8p0a.jpg',500,617,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('109765','Ill Just Wait Here','/templates/2cp1.jpg',491,550,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61539','First World Problems','/templates/1bhf.jpg',552,367,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('28034788','Marvel Civil War 1','/templates/govs4.jpg',423,734,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('16464531','But Thats None Of My Business','/templates/9sw43.jpg',600,600,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('101910402','Who Would Win?','/templates/1ooaki.jpg',802,500,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('176908','Shut Up And Take My Money Fry','/templates/3si4.jpg',500,281,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('235589','Evil Toddler','/templates/51s5.jpg',500,332,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('27920','Surprised Koala','/templates/ljk.jpg',500,667,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61582','Creepy Condescending Wonka','/templates/1bim.jpg',550,545,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61581','Put It Somewhere Else Patrick','/templates/1bil.jpg',343,604,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('53764','Peter Parker Cry','/templates/15hg.jpg',400,992,4);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('14230520','Black Girl Wat','/templates/8h0c8.jpg',599,626,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('112126428','Distracted Boyfriend','/templates/1ur9b0.jpg',1200,800,3);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('129242436','Change My Mind','/templates/24y43o.jpg',482,361,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('217743513','UNO Draw 25 Cards','/templates/3lmzyx.jpg',500,494,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('124822590','Left Exit 12 Off Ramp','/templates/22bdq6.jpg',804,767,3);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('102156234','Mocking Spongebob','/templates/1otk96.jpg',502,353,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('93895088','Expanding Brain','/templates/1jwhww.jpg',857,1202,4);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('131940431','Grus Plan','/templates/26jxvz.jpg',700,449,4);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('252600902','Always Has Been','/templates/46e43q.png',960,540,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('4087833','Waiting Skeleton','/templates/2fm6x.jpg',298,403,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('148909805','Monkey Puppet','/templates/2gnnjh.jpg',923,768,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('226297822','Panik Kalm Panik','/templates/3qqcim.png',640,881,3);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('100777631','Is This A Pigeon','/templates/1o00in.jpg',1587,1425,3);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('80707627','Sad Pablo Escobar','/templates/1c1uej.jpg',720,709,3);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('123999232','The Scroll Of Truth','/templates/21tqf4.jpg',1280,1236,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('155067746','Surprised Pikachu','/templates/2kbn1e.jpg',1893,1893,3);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('180190441','Theyre The Same Picture','/templates/2za3u1.jpg',1363,1524,3);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('101470','Ancient Aliens','/templates/26am.jpg',500,437,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('195515965','Clown Applying Makeup','/templates/38el31.jpg',750,798,4);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('134797956','American Chopper Argument','/templates/2896ro.jpg',640,1800,5);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('79132341','Bike Fall','/templates/1b42wl.jpg',500,680,3);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('21735','The Rock Driving','/templates/grr.jpg',568,700,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('5496396','Leonardo Dicaprio Cheers','/templates/39t1o.jpg',600,400,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('55311130','This Is Fine','/templates/wxica.jpg',580,282,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('28251713','Oprah You Get A','/templates/gtj5t.jpg',620,465,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('8072285','Doge','/templates/4t0m5.jpg',620,620,5);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('84341851','Evil Kermit','/templates/1e7ql7.jpg',700,325,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('14371066','Star Wars Yoda','/templates/8k0sa.jpg',620,714,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61520','Futurama Fry','/templates/1bgw.jpg',552,414,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('101288','Third World Skeptical Kid','/templates/265k.jpg',426,426,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61532','The Most Interesting Man In The World','/templates/1bh8.jpg',550,690,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('4173692','Scared Cat','/templates/2hgfw.jpg',620,464,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('460541','Jack Sparrow Being Chased','/templates/9vct.jpg',500,375,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('285870','Squidward','/templates/64ku.jpg',500,750,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61544','Success Kid','/templates/1bhk.jpg',500,500,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('6531067','See Nobody Cares','/templates/3vzej.jpg',620,676,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61585','Bad Luck Brian','/templates/1bip.jpg',475,562,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61533','X All The Y','/templates/1bh9.jpg',500,355,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('29562797','Im The Captain Now','/templates/hlmst.jpg',478,350,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('8279814','Cute Cat','/templates/4xgqu.jpg',480,532,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('21604248','Mugatu So Hot Right Now','/templates/cv1y0.jpg',620,497,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('89655','Uncle Sam','/templates/1x6f.jpg',620,833,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61580','Too Damn High','/templates/1bik.jpg',420,316,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('1202623','Keep Calm And Carry On Red','/templates/pry7.jpg',500,704,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('61527','Y U No','/templates/1bh3.jpg',500,500,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('40945639','Dr Evil Laser','/templates/odluv.jpg',500,405,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('101716','Yo Dawg Heard You','/templates/26hg.jpg',500,323,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('71428573','Say it Again, Dexter','/templates/16iyn1.jpg',698,900,2);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('56225174','Be Like Bill','/templates/xh3me.jpg',913,907,4);
+    INSERT INTO templates(id,name,url,width,height,box_count) VALUES('922147','Laughing Men In Suits','/templates/jrj7.jpg',500,333,2);
+
+    DROP TABLE IF EXISTS memes;
+    CREATE TABLE IF NOT EXISTS memes (
+        uuid uuid,
+      userid text,
+        PRIMARY KEY (uuid)
+    );
+
+    DROP TABLE IF EXISTS meme_images;
+    CREATE TABLE IF NOT EXISTS meme_images (
+        uuid uuid,
+      image_source text,
+        PRIMARY KEY (uuid)
+    );
+
+
+    DROP TABLE IF EXISTS memes_likes;
+    CREATE TABLE IF NOT EXISTS memes_likes (
+      uuid uuid,
+      likes counter,
+      dislikes counter,
+        PRIMARY KEY (uuid)
+    );
+
