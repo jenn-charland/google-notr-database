@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: memegen-db-seed
+  name: memes-db-seed
   namespace: memes
   labels:
       app: memes

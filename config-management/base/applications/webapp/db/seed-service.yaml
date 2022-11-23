@@ -30,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: scylla-client-service
+  name: cassandra-client-service
   namespace: memes
   labels:
     app: memes
