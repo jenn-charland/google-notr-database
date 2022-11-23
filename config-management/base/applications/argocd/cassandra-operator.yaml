@@ -10,6 +10,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     repoURL: 'https://helm.k8ssandra.io/stable'
+    targetRevision: 0.38.5
     chart: k8ssandra-operator
     helm:
       releaseName: k8ssandra-operator
