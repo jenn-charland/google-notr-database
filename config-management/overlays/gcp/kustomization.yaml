@@ -22,3 +22,12 @@ patches:
       value:
         name: DB_DATACENTER
         value: "GCP"
+- target:
+    kind: Application
+    name: k8ssandra-operator
+  patch: |-
+    - op: replace
+      path: "/spec/source/helm/parameters/0"
+      value:
+        name: controlPlane
+        value: "true"
