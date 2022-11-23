@@ -13,3 +13,12 @@ patches:
       value:
         name: DB_DATACENTER
         value: "GCP"
+- target:
+    kind: Deployment
+    name: memes-ui
+  patch: |-
+    - op: replace
+      path: "/spec/template/spec/containers/0/env/-"
+      value:
+        name: DB_DATACENTER
+        value: "GCP"
