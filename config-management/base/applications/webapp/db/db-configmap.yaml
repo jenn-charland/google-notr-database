@@ -2,11 +2,11 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: memegen-db-seed
-  namespace: memesgen
+  namespace: memes
   labels:
-      app: memesgen
-      app.kubernetes.io/name: memesgen
-      app.kubernetes.io/instance: memesgen
+      app: memes
+      app.kubernetes.io/name: memes
+      app.kubernetes.io/instance: memes
       app.kubernetes.io/component: "db"
 data:
   memegen.cql: |
