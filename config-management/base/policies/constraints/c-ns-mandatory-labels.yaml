@@ -27,5 +27,5 @@ spec:
   parameters:
     message: "All namespaces must have an `env` label set with a value from:  prod, dev, or stg"
     labels:
-      - key: env
+      - key: environment
         allowedRegex: "^(dev|stg|prod)$"
