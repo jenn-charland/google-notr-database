@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- constraints/c-ban-latest-tag.yaml
+- constraints/c-banned-keys.yaml
+- constraints/c-ns-mandatory-labels.yaml
+- templates/t-allowedrepo.yaml
+- templates/t-ban-latest-tag.yaml
+- templates/t-banned-keys.yaml
+- templates/t-fsgroup.yaml
+- templates/t-privileged-containers.yaml
+- templates/t-privileged-escalation.yaml
+- templates/t-requiredlabels.yaml
+- templates/t-selinux.yaml

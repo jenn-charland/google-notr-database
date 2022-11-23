@@ -4,5 +4,8 @@ resources:
 - api/memes-api-deployment.yaml
 - ui/memes-ui-deployment.yaml
 - db/db-configmap.yaml
-
-
+- api/api-service.yaml
+- api/api-serviceaccount.yaml
+- db/seed-service.yaml
+- ui/ui-service.yaml
+- ui/ui-serviceaccount.yaml
