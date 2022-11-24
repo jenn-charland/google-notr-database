@@ -1,0 +1,112 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: scylla-cluster-member
+  namespace: memes
+  labels:
+      app: memes
+      app.kubernetes.io/name: memes
+      app.kubernetes.io/instance: memes
+      app.kubernetes.io/component: "db"
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: scylla-cluster
+  namespace: memes
+  labels:
+      app: memes
+      app.kubernetes.io/name: memes
+      app.kubernetes.io/instance: memes
+      app.kubernetes.io/component: "db"
+spec:
+  serviceName: db-seed-service
+  replicas: 1
+  selector:
+    matchLabels:
+      app: memes
+      app.kubernetes.io/name: memes
+      app.kubernetes.io/instance: memes
+      app.kubernetes.io/component: "db"  
+  template:
+    metadata:
+      labels:
+        app: memes
+        app.kubernetes.io/name: memes
+        app.kubernetes.io/instance: memes
+        app.kubernetes.io/component: "db"    
+    spec:
+      serviceAccount: scylla-cluster-member
+      serviceAccountName: scylla-cluster-member
+      containers:
+        - name: scylla
+          image: docker.io/scylladb/scylla:4.5.1
+          imagePullPolicy: IfNotPresent
+          args: ["--seeds", "104.196.100.128"]
+          ports:
+            - containerPort: 7000
+              name: intra-node
+              protocol: TCP
+            - containerPort: 7001
+              name: tls-intra-node
+              protocol: TCP
+            - containerPort: 7199
+              name: jmx
+              protocol: TCP
+            - containerPort: 9180
+              name: prometheus
+              protocol: TCP
+            - containerPort: 9042
+              name: cql
+              protocol: TCP
+            - containerPort: 9142
+              name: cql-ssl
+              protocol: TCP
+            - containerPort: 9160
+              name: thrift
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 500m
+              memory: 1Gi
+            requests:
+              cpu: 500m
+              memory: 1Gi
+          securityContext:
+            capabilities:
+              add:
+                - IPC_LOCK
+          volumeMounts:
+            - name: scylla-data
+              mountPath: /var/lib/scylla
+            - name: scylla-config-volume
+              mountPath: /etc/scylla/
+            - name: db-seed-data
+              mountPath: /tmp/db-data
+      volumes:
+        - configMap:
+            defaultMode: 420
+            name: scylla-config
+            optional: true
+          name: scylla-config-volume
+        - configMap:
+            defaultMode: 420
+            name: memegen-db-seed
+          name: db-seed-data
+  volumeClaimTemplates:
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      labels:
+          app: memes
+          app.kubernetes.io/name: memes
+          app.kubernetes.io/instance: memes
+          app.kubernetes.io/component: "db"
+      name: scylla-data
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      volumeMode: Filesystem
