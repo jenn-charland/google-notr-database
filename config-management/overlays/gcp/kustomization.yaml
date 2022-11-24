@@ -31,3 +31,5 @@ patches:
       value:
         name: controlPlane
         value: "true"
+patchesStrategicMerge:
+- map.yaml

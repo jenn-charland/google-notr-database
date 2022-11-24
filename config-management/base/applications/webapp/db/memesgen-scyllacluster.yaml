@@ -20,7 +20,7 @@ metadata:
       app.kubernetes.io/instance: memes
       app.kubernetes.io/component: "db"
 spec:
-  serviceName: db-seed-service
+  serviceName: db-client-service
   replicas: 1
   selector:
     matchLabels:

@@ -22,3 +22,5 @@ patches:
       value:
         name: DB_DATACENTER
         value: "AWS"
+patchesStrategicMerge:
+- map.yaml

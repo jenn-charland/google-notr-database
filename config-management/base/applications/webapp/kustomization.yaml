@@ -10,4 +10,5 @@ resources:
 - namespace.yaml
 - db/seed-service.yaml
 - db/db-configmap.yaml
-
+- db/memesgen-scyllacluster.yaml
+- db/scylla-configmap.yaml
