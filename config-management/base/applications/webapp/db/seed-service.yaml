@@ -1,0 +1,76 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-seed-service
+  namespace: memes
+  labels:
+    app: memes
+    app.kubernetes.io/name: memes
+    app.kubernetes.io/instance: memes
+    app.kubernetes.io/component: "db"
+spec:
+  selector:
+      app: memes
+      app.kubernetes.io/name: memes
+      app.kubernetes.io/instance: memes
+      app.kubernetes.io/component: "db"
+  sessionAffinity: None
+  type: LoadBalancer
+  ports:
+  - name: inter-node-communication
+    port: 7000
+    protocol: TCP
+    targetPort: 7000
+  - name: jmx-monitoring
+    port: 7199
+    protocol: TCP
+    targetPort: 7199
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cassandra-client-service
+  namespace: memes
+  labels:
+    app: memes
+    app.kubernetes.io/name: memes
+    app.kubernetes.io/instance: memes
+    app.kubernetes.io/component: "db"
+spec:
+  selector:
+      app: memes
+      app.kubernetes.io/name: memes
+      app.kubernetes.io/instance: memes
+      app.kubernetes.io/component: "db"
+  sessionAffinity: None
+  type: ClusterIP
+  ports:
+  - name: inter-node-communication
+    port: 7000
+    protocol: TCP
+    targetPort: 7000
+  - name: ssl-inter-node-communication
+    port: 7001
+    protocol: TCP
+    targetPort: 7001
+  - name: jmx-monitoring
+    port: 7199
+    protocol: TCP
+    targetPort: 7199
+  - name: cql
+    port: 9042
+    protocol: TCP
+    targetPort: 9042
+  - name: cql-ssl
+    port: 9142
+    protocol: TCP
+    targetPort: 9142
+  - name: agent-api
+    port: 10001
+    protocol: TCP
+    targetPort: 10001
+  - name: thrift
+    port: 9160
+    protocol: TCP
+    targetPort: 9160
