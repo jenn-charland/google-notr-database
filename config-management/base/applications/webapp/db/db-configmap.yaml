@@ -13,7 +13,9 @@ data:
     CREATE KEYSPACE memegen2 
     WITH REPLICATION = {
        'class' : 'NetworkTopologyStrategy',
-       'gcp' : 1
+       'gcp' : 1 ,
+       'aws' : 1,
+       'azure' : 1
     };
     USE memegen2;
     DROP TABLE IF EXISTS templates;
