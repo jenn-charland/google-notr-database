@@ -91,7 +91,7 @@ spec:
           name: scylla-config-volume
         - configMap:
             defaultMode: 420
-            name: memegen-db-seed
+            name: memes-db-seed
           name: db-seed-data
   volumeClaimTemplates:
   - apiVersion: v1
