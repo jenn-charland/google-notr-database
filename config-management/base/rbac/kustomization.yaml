@@ -4,3 +4,4 @@ resources:
 - role-bindings/console-cluster-admin-binding.yaml
 - roles/role-cluster-viewer.yaml
 - serviceAccounts/cluster-admin.yaml
+- role-bindings/scylla.yaml
