@@ -4,9 +4,10 @@ resources:
 - api/memes-api-deployment.yaml
 - api/api-service.yaml
 - api/api-serviceaccount.yaml
-- db/db-configmap.yaml
 - ui/ui-service.yaml
 - ui/ui-serviceaccount.yaml
 - ui/memes-ui-deployment.yaml
 - namespace.yaml
-- db/k8ssandra-cluster.yaml
+- db/seed-service.yaml
+- db/db-configmap.yaml
+
