@@ -27,7 +27,7 @@ spec:
     spec:
       serviceAccountName: memes-api-serviceaccount
       containers:
-        - image: gcr.io/notr-2022-anthos-364917/api-service:e773d6c85cbbb3c209f21e435e7b3b464dec005b
+        - image: gcr.io/anthos-accelerator-demo/api_layer:c055e9830f49e3ab4ee1ee576c324b37f88e08e6
           name: api
           ports:
             - containerPort: 8000
