@@ -9,12 +9,12 @@ data:
     endpoint_snitch: GossipingPropertyFileSnitch
     listen_address: db-client-service
     rpc_address: db-client-service
-    broadcast_address: 104.196.100.128
-    broadcast_rpc_address: 104.196.100.128
+    broadcast_address: 	35.196.103.17
+    broadcast_rpc_address: 	35.196.103.17
     seed_provider:
     - class_name: org.apache.cassandra.locator.SimpleSeedProvider
       parameters:
-      - seeds: 104.196.100.128
+      - seeds: 35.196.103.17
   cassandra-rackdc.properties: |
     dc=gcp
     rack=memes
