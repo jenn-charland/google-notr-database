@@ -9,12 +9,12 @@ data:
     endpoint_snitch: GossipingPropertyFileSnitch
     listen_address: db-client-service
     rpc_address: db-client-service
-    broadcast_address: a4f7f0a4edb8c4474a713bdfb1db6c82-803546820.us-east-1.elb.amazonaws.com
-    broadcast_rpc_address: a4f7f0a4edb8c4474a713bdfb1db6c82-803546820.us-east-1.elb.amazonaws.com
+    broadcast_address: a0742ee047729486fab8ef0acd36af80-685010908.us-east-1.elb.amazonaws.com 
+    broadcast_rpc_address: a0742ee047729486fab8ef0acd36af80-685010908.us-east-1.elb.amazonaws.com
     seed_provider:
     - class_name: org.apache.cassandra.locator.SimpleSeedProvider
       parameters:
-      - seeds: 104.196.100.128
+      - seeds: 35.196.103.17
   cassandra-rackdc.properties: |
     dc=aws
     rack=memes
