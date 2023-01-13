@@ -42,7 +42,7 @@ spec:
         - name: scylla
           image: docker.io/scylladb/scylla:4.5.1
           imagePullPolicy: IfNotPresent
-          args: ["--seeds", "104.196.100.128"]
+          args: ["--seeds", "35.196.103.17"]
           ports:
             - containerPort: 7000
               name: intra-node
