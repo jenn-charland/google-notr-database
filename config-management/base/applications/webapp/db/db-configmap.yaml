@@ -14,8 +14,6 @@ data:
     WITH REPLICATION = {
        'class' : 'NetworkTopologyStrategy',
        'gcp' : 1 ,
-       'aws' : 1,
-       'azure' : 1
     };
     USE memegen2;
     DROP TABLE IF EXISTS templates;
